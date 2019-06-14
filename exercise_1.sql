@@ -58,3 +58,20 @@ WHERE name = capital
 SELECT name
 FROM world
 WHERE capital LIKE concat(name, ' City')
+
+--Find the capital and the name where the capital includes the name of the country
+select capital, name
+from world
+where 
+capital like concat( '%', name, '%')
+
+
+--Find the capital and the name where the capital is an extension of name of the country
+select capital, name
+from world
+where capital like concat(name, '_%')
+
+--Show the name and the extension where the capital is an extension of name of the country
+select name, replace(capital, name, '')
+from world
+where capital like concat(name, '_%')
