@@ -48,3 +48,13 @@ WHERE name LIKE '%o__o%'
 SELECT name
 FROM world
 WHERE name LIKE '____'
+
+--Find the country where the name is the capital city
+SELECT name
+FROM world
+WHERE name = capital
+
+--Find the country where the capital is the country plus "City"
+SELECT name
+FROM world
+WHERE capital LIKE concat(name, ' City')
